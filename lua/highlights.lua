@@ -382,9 +382,9 @@ theme.loadTreeSitter = function ()
 		TSTypeBuiltin        = {fg = colors.yellow, bold = true}, -- For builtin types.
 		-- TSTypeDefinition
 		-- TSTypeQualifier
-		TSNamespace          = {fg = colors.yellow}, -- For identifiers referring to modules and namespaces.
-		TSSymbol             = {fg = colors.yellow}, -- For identifiers referring to symbols or atoms.
-		TSAttribute          = {fg = colors.yellow}, -- (unstable) TODO: docs
+		TSNamespace          = {fg = colors.fg}, -- For identifiers referring to modules and namespaces.
+		TSSymbol             = {fg = colors.fg}, -- For identifiers referring to symbols or atoms.
+		TSAttribute          = {fg = colors.fg}, -- (unstable) TODO: docs
 
 		-- Variables
 		TSVariable           = {link = "Identifier"}, -- Any variable name that does not have another highlight.
@@ -392,10 +392,10 @@ theme.loadTreeSitter = function ()
 
 		-- Text
 		TSText               = {fg = colors.fg}, -- For strings considered text in a markup language.
-		TSStrong             = {fg = colors.paleblue, bold = true}, -- Text to be represented in bold.
-		TSEmphasis           = {fg = colors.paleblue}, -- For text to be represented with emphasis.
+		TSStrong             = {fg = colors.fg, bold = true}, -- Text to be represented in bold.
+		TSEmphasis           = {fg = colors.fg, italic = true}, -- For text to be represented with emphasis.
 		TSUnderline          = {fg = colors.fg, underline = true}, -- For text to be represented with an underline.
-		-- TSStrike          = {fg = colors.fg,, strikethrough = true}, -- For strikethrough text.
+		TSStrike             = {fg = colors.fg, strikethrough = true}, -- For strikethrough text.
 		TSTitle              = {fg = colors.title, bold = true}, -- Text that is part of a title.
 		TSLiteral            = {fg = colors.fg}, -- Literal text.
 		TSURI                = {fg = colors.link, bold = true}, -- Any URI like a link or email.
