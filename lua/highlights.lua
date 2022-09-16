@@ -6,7 +6,7 @@ local theme = {}
 theme.loadEditor = function()
 	-- Editor highlight groups
 	local editor = {
-		ColorColumn      = {fg = colors.red, bg = colors.red}, -- used for the columns set with 'colorcolumn'
+		ColorColumn      = {fg = colors.bg_alt, bg = colors.bg_alt}, -- used for the columns set with 'colorcolumn'
 		Conceal          = {fg = colors.disabled}, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor           = {fg = colors.bg_alt, bg = colors.cursor}, -- the character under the cursor
 		CursorIM         = {fg = colors.bg_alt, bg = colors.cursor}, -- like Cursor, but used when in IME mode
