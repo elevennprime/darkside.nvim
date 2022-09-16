@@ -10,9 +10,6 @@ local colors = {
 	darkyellow    = '#e9ad0c',
 	darkblue      = '#1e5098',
 	-- darkorange = '#e2795b',
-	error         = '#ff4f58',
-	cursor        = '#ffdd33',
-	title         = '#eeffff',
 
 	-- Common colors
 	black         = '#000000',
@@ -20,6 +17,7 @@ local colors = {
 	gray          = '#717cb4',
 	red           = '#f43841',
 	red1          = '#fa2772',
+	red2          = '#ff4f58',
 	green         = '#33d17a',
 	yellow        = '#ffdd33',
 	blue          = '#2a7bde',
@@ -49,6 +47,9 @@ local colors = {
 colors.string     = colors.green
 colors.link       = colors.cyan
 colors.comments   = '#546E7A'
+colors.error      = colors.red2
+colors.cursor     = colors.yellow
+colors.title      = '#eeffff'
 
 
 -- Apply the disabled background setting
