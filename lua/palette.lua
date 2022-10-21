@@ -28,8 +28,8 @@ local colors = {
 	pink          = '#ff9cac',
 	pink1         = '#f92772',
 
-	bg            = '#181818',
-	bg_alt        = '#282828',
+	bg            = '#0f0f0f',
+	bg_alt        = '#181818',
 	fg            = '#e4e4ef',
 	fg_alt        = '#9e9e9e',
 	selection     = '#464b5d',
