@@ -380,7 +380,7 @@ theme.loadTreeSitter = function ()
 
 		--TSType                   = {fg = colors.yellow, bold = true}, -- For types.
 		["@type.builtin"]          = {fg = colors.yellow, bold = true}, -- for builtin types.
-		-- TSTypeDefinition
+		["@type.definition"]       = {fg = colors.fg}, -- for builtin types.
 		-- TSTypeQualifier
 		["@namespace"]             = {fg = colors.fg}, -- For identifiers referring to modules and namespaces.
 		["@symbol"]                = {fg = colors.fg}, -- For identifiers referring to symbols or atoms.
