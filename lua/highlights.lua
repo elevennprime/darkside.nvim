@@ -321,106 +321,80 @@ theme.loadSyntax = function ()
 end
 
 
+-- TreeSitter highlight groups
 theme.loadTreeSitter = function ()
-	-- TreeSitter highlight groups
-	local treesitter = {
-		-- Misc
-		["@Comment"]               = {link = "Comment"}, -- For comment blocks.
-		-- TSdebug
-		["@Define"]                = {fg = colors.gray}, -- For syntax/parser errors.
-		["@Error"]                 = {fg = colors.error}, -- For syntax/parser errors.
-		["@none"]                  = {fg = colors.fg},
-		["@preproc"]               = {fg = colors.gray}, -- Preprocessor #if, #else, #endif, etc.
-		["@punctuation.delimiter"] = {fg = colors.fg}, -- For delimiters ie: `.`
-		["@punctuation.bracket"]   = {fg = colors.fg}, -- For brackets and parens.
-		["@punctuation.special"]   = {fg = colors.fg}, -- For special punctutation that does not fall in the catagories before.
+	return {
+		["@text"]                  = {fg = colors.fg}, -- For strings considered text in a markup language.
+		["@text.literal"]          = {link = "@text"},
+		["@text.emphasis"]         = {italic = true}, -- For text to be represented with emphasis.
+		["@text.math"]             = {fg = colors.blue}, -- Math environments like LaTeX's `$ ... $`
+		["@text.reference"]        = {fg = colors.yellow},
+		["@text.strike"]           = {strikethrough = true}, -- For strikethrough text.
+		["@text.strong"]           = {bold = true}, -- Text to be represented in bold.
+		["@text.title"]            = {fg = colors.title, bold = true}, -- Text that is part of a title.
+		["@text.todo"]             = {link = "Todo"},
+		["@text.underline"]        = {underline = true}, -- For text to be represented with an underline.
+		["@text.environment"]      = {fg = colors.yellow, bold = true},
+		["@text.environment.name"] = {fg = colors.fg},
+		["@text.uri"]              = {fg = colors.link, bold = true}, -- any uri like a link or email.
 
-		-- Constants
+		["@comment"]               = {link = "Comment"}, -- For comment blocks.
+		["@punctuation"]           = {fg = colors.fg}, -- For delimiters ie: `.`
+
 		["@constant"]              = {link = "Constant"}, -- For constants
 		["@const.builtin"]         = {fg = colors.fg}, -- For constant that are built in the language: `nil` in Lua.
 		["@const.macro"]           = {fg = colors.pink1}, -- For constants that are defined by macros: `NULL` in C.
-		-- TSString                = {fg = colors.green}, -- For strings.
+		["@define"]                = {fg = colors.gray}, -- For syntax/parser errors.
+		["@macro"]                 = {link = "Macro"},
+		["@string"]                = {fg = colors.green}, -- For strings.
 		["@string.regex"]          = {fg = colors.yellow}, -- For regexes.
 		["@string.escape"]         = {fg = colors.green}, -- For escape characters within a string.
 		["@string.special"]        = {fg = colors.cyan}, -- Strings with special meaning that don't fit into the previous categories.
-
 		["@character"]             = {fg = colors.green}, -- For characters.
+		["@character.special"]     = {fg = colors.green}, -- For characters.
+		["@number"]                = {fg = colors.orange}, -- For all numbers
+		["@boolean"]               = {link = "Boolean"},
+		["@float"]                 = {fg = colors.orange},
 
-		-- TSCharacterSpecial
-		-- TSNumber                = {fg = colors.orange}, -- For all numbers
-		["@boolean"]               = {link = "Boolean"}, -- For booleans.
-		-- TSFloat                 = {fg = colors.orange}, -- For floats.
 
-		-- Functions
 		["@function"]              = {link = "Function"}, -- For fuction (calls and definitions).
 		["@function.builtin"]      = {link = "Function"}, -- For builtin functions: `table.insert` in Lua.
-		-- TSFunctionCall
 		["@function.macro"]        = {link = "Function"}, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
 		["@parameter"]             = {fg = colors.fg}, -- For parameters of a function.
-
+		["@parameter.reference"]   = {fg = colors.paleblue}, -- For references to parameters of a function.
 		["@method"]                = {link = "Function"}, -- For method calls and definitions.
-		-- TSMethodCall
 		["@field"]                 = {fg = colors.fg}, -- For fields.
 		["@property"]              = {fg = colors.fg}, -- Same as `TSField`,accesing for struct members in C.
-
 		["@constructor"]           = {fg = colors.fg}, -- For constructor calls and definitions: `= {}` in Lua, and Java constructors.
 
-		-- Keywords
-		-- TSConditional           = {fg = colors.yellow, bold = true}, -- For keywords related to conditionnals.
-		-- TSRepeat                = {fg = colors.yellow, bold = true}, -- For keywords related to loops.
-		-- TSLabel                 = {link = "Label"}, -- For labels: `label:` in C and `:label:` in Lua.
+		["@conditional"]           = {fg = colors.yellow, bold = true}, -- For keywords related to conditionnals.
+		["@repeat"]                = {fg = colors.yellow, bold = true}, -- For keywords related to loops.
+		["@label"]                 = {link = "Label"}, -- For labels: `label:` in C and `:label:` in Lua.
+		["@label.json"]            = {bold = false},
+		["@operator"]              = {link = "Operator"},  -- For any operator: `+`, but also `->` and `*` in C.
 		["@keyword"]               = {fg = colors.yellow, bold = true}, -- For keywords that don't fall in previous categories.
-		-- TSKeywordFunction       = {fg = colors.yellow, bold = true}, -- For keywords used to define a fuction.
-		-- TSKeywordOperator       = {fg = colors.yellow, bold = true}, -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
-		-- TSKeywordReturn         = {fg = colors.yellow, bold = true}, -- return keyword
-		-- TSOperator              = {fg = colors.fg}, -- For any operator: `+`, but also `->` and `*` in C.
 		["@exception"]             = {link = "Exception"}, -- For exception related keywords.
-		-- TSInclude               = {fg = colors.yellow, bold = true}, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-		["@storageClass"]          = {fg = colors.pink1, bold = true}, -- Keywords that affect how a variable is stored: static, comptime, extern, etc
 
-		--TSType                   = {fg = colors.yellow, bold = true}, -- For types.
-		["@type.builtin"]          = {fg = colors.yellow, bold = true}, -- for builtin types.
-		["@type.definition"]       = {fg = colors.fg}, -- for builtin types.
-		-- TSTypeQualifier
-		["@namespace"]             = {fg = colors.fg}, -- For identifiers referring to modules and namespaces.
-		["@symbol"]                = {fg = colors.fg}, -- For identifiers referring to symbols or atoms.
-		["@attribute"]             = {fg = colors.fg}, -- (unstable) TODO: docs
-
-		-- Variables
 		["@variable"]              = {link = "Identifier"}, -- Any variable name that does not have another highlight.
 		["@variable.builtin"]      = {link = "Identifier"}, -- Variable names that are defined by the languages, like `this` or `self`.
-
-		-- Text
-		["@text"]                  = {fg = colors.fg}, -- For strings considered text in a markup language.
-		["@text.strong"]           = {fg = colors.fg, bold = true}, -- Text to be represented in bold.
-		["@text.emphasis"]         = {fg = colors.fg, italic = true}, -- For text to be represented with emphasis.
-		["@text.underline"]        = {fg = colors.fg, underline = true}, -- For text to be represented with an underline.
-		["@text.strike"]           = {fg = colors.fg, strikethrough = true}, -- For strikethrough text.
-		["@text.title"]            = {fg = colors.title, bold = true}, -- Text that is part of a title.
-		["@text.literal"]          = {fg = colors.fg}, -- Literal text.
-		["@text.uri"]              = {fg = colors.link, bold = true}, -- any uri like a link or email.
-		["@math"]                  = {fg = colors.blue}, -- Math environments like LaTeX's `$ ... $`
-		-- TSEnvironment
-		-- TSEnvironmentName
-		["@textReference"]         = {fg = colors.yellow},
-
-		-- TSNote
-		-- TSWarning
-		["@text.danger"]           = {fg = colors.error}, -- Text representation of a danger note.
-		-- TSTodo
-
-		-- Tags
+		["@type"]                  = {fg = colors.yellow, bold = true}, -- For types.
+		["@type.builtin"]          = {fg = colors.yellow, bold = true}, -- for builtin types.
+		["@type.definition"]       = {fg = colors.fg}, -- for builtin types.
+		["@storageclass"]          = {fg = colors.pink1, bold = true}, -- Keywords that affect how a variable is stored: static, comptime, extern, etc
+		["@structure"]             = {link = "Structure"}, -- Structure: struct, union, enum, etc.
+		["@namespace"]             = {fg = colors.fg}, -- For identifiers referring to modules and namespaces.
+		["@namespace.latex"]       = {fg = colors.yellow, bold = true}, -- For identifiers referring to modules and namespaces.
+		["@include"]               = {link = "Include"}, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+		["@preproc"]               = {fg = colors.gray}, -- Preprocessor #if, #else, #endif, etc.
+		["@debug"]                 = {link = "Debug"},
 		["@tag"]                   = {fg = colors.pink1}, -- Tags like html tag names.
 		["@tag.delimiter"]         = {fg = colors.fg}, -- Tag delimiter like `<` `>` `/`
 		["@tag.attribute"]         = {fg = colors.fg}, -- HTML tag attributes.
 
-		["@parameter.reference"]   = {fg = colors.paleblue}, -- For references to parameters of a function.
 
-
-		["@label.json"]            = {fg = colors.fg, bold = false},
+		["@error"]                 = {fg = colors.error}, -- For syntax/parser errors.
+		["@none"]                  = {fg = colors.fg},
 	}
-
-	return treesitter
 end
 
 theme.loadLSP = function ()
