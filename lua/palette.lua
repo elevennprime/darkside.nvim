@@ -38,7 +38,7 @@ local colors = {
 	border        = '#37444c',
 	line_numbers  = '#37474f',
 	highlight     = '#425b67',
-	disabled      = '#415967',
+	disabled      = '#282828',
 	accent        = '#009688',
 
 	none          =  'NONE',
