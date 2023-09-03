@@ -471,6 +471,22 @@ theme.loadLSP = {
 	LspReferenceText           = {bg = colors.selection, underline = true}, -- used for highlighting "text" references
 	LspReferenceRead           = {link = "LspReferenceText"}, -- used for highlighting "read" references
 	LspReferenceWrite          = {link = "LspReferenceText"}, -- used for highlighting "write" references
+
+	["@lsp.type.class"]        = {link = "Structure"},
+	["@lsp.type.decorator"]    = {link = "Function"},
+	["@lsp.type.enum"]         = {link = "Structure"},
+	["@lsp.type.enumMember"]   = {link = "Constant"},
+	["@lsp.type.function"]     = {link = "Function"},
+	["@lsp.type.interface"]    = {link = "Structure"},
+	["@lsp.type.macro"]        = {link = "Macro"},
+	["@lsp.type.method"]       = {link = "Function"},
+	["@lsp.type.namespace"]    = {link = "@namespace"},
+	["@lsp.type.parameter"]    = {link = "Identifier"},
+	["@lsp.type.property"]     = {link = "Identifier"},
+	["@lsp.type.struct"]       = {link = "Structure"},
+	["@lsp.type.type"]         = {link = "Type"},
+	["@lsp.type.typeParameter"]= {link = "TypeDef"},
+	["@lsp.type.variable"]     = {link = "Identifier"},
 }
 
 return theme
