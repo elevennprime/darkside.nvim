@@ -13,8 +13,7 @@ function M.get(palette, config)
 		Directory        = {fg = palette.blue, bold = true}, -- directory names (and other special names in listings)
 
 		-- the some good color for text that changed
-		-- DiffAdd          = {fg = styles.fg, bg = styles.green}, -- diff mode: Added line
-		DiffAdd          = {fg = palette.fg, bg = palette.green, bold = true}, -- diff mode: Added line
+		DiffAdd          = {fg = palette.fg, bg = palette.green}, -- diff mode: Added line
 		DiffChange       = {fg = palette.fg, bg = palette.darkblue}, -- diff mode: Changed line
 		DiffDelete       = {bg = palette.red}, -- diff mode: Deleted line
 		-- DiffText         = {fg = styles.fg, bg = styles.bg_alt}, -- diff mode: Changed text within a changed line -- DEPREACTED
