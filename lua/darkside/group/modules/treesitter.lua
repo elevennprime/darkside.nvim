@@ -17,7 +17,7 @@ function M.get(palette, config)
 		["@punctuation"]           = {fg = palette.fg}, -- delimiters
 		["@punctuation.delimiter"] = {link = "@punctuation"}, -- delimiters (e.g. `;` / `.` / `,`)
 		["@punctuation.bracket"]   = {link = "@punctuation"}, -- brackets (e.g. `()` / `{}` / `[]`)
-		["@punctuation.special"]   = {fg = palette.pink1}, -- special symbols (e.g. `{}` in string interpolation)
+		["@punctuation.special"]   = {link = "@punctuation"}, -- special symbols (e.g. `{}` in string interpolation)
 
 		-- Literals
 		["@string"]                = {fg = palette.green}, -- string literals
@@ -125,6 +125,9 @@ function M.get(palette, config)
 		["@namespace.latex"]       = {fg = palette.yellow, bold = true}, -- For identifiers referring to modules and namespaces.
 		-- json
 		["@label.json"]            = {bold = false},
+
+		-- markdown
+		["@punctuation.special.markdown"]   = {fg = palette.gray}, -- special symbols (e.g. `{}` in string interpolation)
 	}
 end
 
