@@ -94,7 +94,7 @@ function M.get(palette, config)
 		["@text.strike"]           = {strikethrough = true}, -- strike through text
 		["@text.title"]            = {fg = palette.title, bold = true}, -- text that is part of a title
 		["@text.quote"]            = {link = "@text"}, -- text quotations
-		["@text.uri"]              = {fg = palette.link, bold = true}, -- URIs (e.g. hyperlinks)
+		["@text.uri"]              = {fg = palette.link, underline = true}, -- URIs (e.g. hyperlinks)
 		["@text.math"]             = {fg = palette.blue}, -- math environments (e.g. `$ ... $` in LaTeX)
 		["@text.environment"]      = {fg = palette.yellow, bold = true}, -- text environments of markup languages
 		["@text.environment.name"] = {fg = palette.fg}, -- text indicating the type of an environment
@@ -127,7 +127,19 @@ function M.get(palette, config)
 		["@label.json"]            = {bold = false},
 
 		-- markdown
-		["@punctuation.special.markdown"]   = {fg = palette.gray}, -- special symbols (e.g. `{}` in string interpolation)
+		["@punctuation.special.markdown"] = {fg = palette.gray},
+		["@text.title.1.markdown"]        = {fg = palette.blue2, bold = true},
+		["@text.title.2.markdown"]        = {fg = palette.blue2, bold = true},
+		["@text.title.3.markdown"]        = {fg = palette.blue2, bold = true},
+		["@text.title.4.markdown"]        = {fg = palette.blue2, bold = true},
+		["@text.title.5.markdown"]        = {fg = palette.blue2, bold = true},
+		["@text.title.6.markdown"]        = {fg = palette.blue2, bold = true},
+		["@text.title.1.marker.markdown"] = {fg = palette.gray},
+		["@text.title.2.marker.markdown"] = {fg = palette.gray},
+		["@text.title.3.marker.markdown"] = {fg = palette.gray},
+		["@text.title.4.marker.markdown"] = {fg = palette.gray},
+		["@text.title.5.marker.markdown"] = {fg = palette.gray},
+		["@text.title.6.marker.markdown"] = {fg = palette.gray},
 	}
 end
 
