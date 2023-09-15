@@ -118,48 +118,6 @@ function M.get(palette, config)
 		healthSuccess       = {fg = palette.green},
 		healthWarning       = {fg = palette.yellow},
 
-		-- nvim cmp
-		PmenuSel            = {fg = "NONE", bg = "#282C34"},
-		Pmenu               = {fg = palette.fg, bg = "#22252A"},
-
-		CmpItemAbbrDeprecated    = {fg = "#7E8294", bg = "NONE"},
-		CmpItemAbbrMatch         = {fg = "#82AAFF", bg = "NONE", bold = true},
-		CmpItemAbbrMatchFuzzy    = {fg = "#82AAFF", bg = "NONE", bold = true},
-		CmpItemMenu              = {fg = palette.comments},
-
-		CmpItemKindField         = {fg = palette.fg},
-		CmpItemKindProperty      = {fg = palette.fg},
-		CmpItemKindEvent         = {fg = palette.fg},
-
-		CmpItemKindText          = {fg = palette.fg},
-		CmpItemKindEnum          = {fg = palette.fg},
-		CmpItemKindKeyword       = {fg = palette.fg},
-
-		CmpItemKindConstant      = {fg = palette.fg},
-		CmpItemKindConstructor   = {fg = palette.fg},
-		CmpItemKindReference     = {fg = palette.fg},
-
-		CmpItemKindFunction      = {fg = palette.fg},
-		CmpItemKindStruct        = {fg = palette.fg},
-		CmpItemKindClass         = {fg = palette.fg},
-		CmpItemKindModule        = {fg = palette.fg},
-		CmpItemKindOperator      = {fg = palette.fg},
-
-		CmpItemKindVariable      = {fg = palette.fg},
-		CmpItemKindFile          = {fg = palette.fg},
-
-		CmpItemKindUnit          = {fg = palette.fg},
-		CmpItemKindSnippet       = {fg = palette.fg},
-		CmpItemKindFolder        = {fg = palette.fg},
-
-		CmpItemKindMethod        = {fg = palette.fg},
-		CmpItemKindValue         = {fg = palette.fg},
-		CmpItemKindEnumMember    = {fg = palette.fg},
-
-		CmpItemKindInterface     = {fg = palette.fg},
-		CmpItemKindColor         = {fg = palette.fg},
-		CmpItemKindTypeParameter = {fg = palette.fg},
-
 		-- Dashboard
 		DashboardShortCut = {fg = palette.red},
 		DashboardHeader   = {fg = palette.comments},

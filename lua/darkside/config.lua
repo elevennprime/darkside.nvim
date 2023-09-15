@@ -63,6 +63,7 @@ local defaults = {
 		lsp_semantic = true,
 		lsp = true,
 		treesitter = true,
+		cmp = true,
 	},
 }
 
@@ -77,6 +78,7 @@ Config.module_names = {
 	"lsp_semantic",
 	"lsp",
 	"treesitter",
+	"cmp",
 }
 
 Config.setup()

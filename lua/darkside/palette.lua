@@ -23,6 +23,7 @@ local colors = {
 	blue          = '#2a7bde',
 	blue1         = '#569CD6',
 	blue2         = '#96A6C8',
+	blue3         = '#548AF7',
 	paleblue      = '#b0c9ff',
 	cyan          = '#33c7de',
 	purple        = '#c061cb',
@@ -32,6 +33,7 @@ local colors = {
 
 	bg            = '#0f0f0f',
 	bg_alt        = '#181818',
+	bg1           = '#282828',
 	fg            = '#e4e4ef',
 	fg_alt        = '#9e9e9e',
 
