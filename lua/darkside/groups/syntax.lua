@@ -24,7 +24,7 @@ function M.get(palette, config)
 			Identifier: any variable name
 			Function: italic funtion names
 		]]
-		Identifier          = {fg = palette.fg, italic = config.italics.variables},
+		Identifier          = {fg = palette.fg},
 		Function            = {fg = palette.fg},
 
 		--[[

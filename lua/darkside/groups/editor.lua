@@ -9,7 +9,7 @@ function M.get(palette, config)
 		CursorIM         = {fg = palette.bg_alt, bg = palette.cursor}, -- like Cursor, but used when in IME mode
 
 		CursorColumn     = {link = "CursorLine"}, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-		CursorLine       = {fg = palette.none, bg = palette.bg_cur}, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+		CursorLine       = {fg = palette.none, bg = palette.active}, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 
 		Directory        = {fg = palette.blue, bold = true}, -- directory names (and other special names in listings)
 
@@ -25,7 +25,7 @@ function M.get(palette, config)
 		Folded           = {fg = palette.disabled}, -- line used for closed folds
 		FoldColumn       = {fg = palette.blue}, -- 'foldcolumn'
 
-		SignColumn       = {fg = palette.fg, bg = palette.bg_sign},
+		SignColumn       = {fg = palette.fg, bg = palette.none},
 		-- SignColumnSB = { bg = C.crust, fg = C.surface1 }, -- column where |signs| are displayed
 
 		IncSearch        = {fg = palette.title, bg = palette.selection, underline = true}, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
@@ -51,9 +51,9 @@ function M.get(palette, config)
 
 		Normal           = {fg = palette.fg, bg = palette.bg}, -- normal text and background color
 		NormalFloat      = {fg = palette.fg, bg = palette.bg}, -- normal text and background color for floating windows
-		NormalNC         = {fg = palette.fg, bg = palette.bg_nc}, -- normal text and background color
+		NormalNC         = {fg = palette.fg, bg = palette.none}, -- normal text and background color
 		-- NormalSB = { fg = C.text, bg = C.crust }, -- normal text in non-current windows
-		FloatBorder      = {fg = palette.border, bg = palette.float}, -- floating window border
+		FloatBorder      = {fg = palette.border, bg = palette.none}, -- floating window border
 		-- FloatTitle = { fg = C.subtext0 }, -- Title of floating windows
 
 
