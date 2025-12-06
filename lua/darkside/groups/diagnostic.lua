@@ -15,10 +15,10 @@ function M.get(palette)
 		DiagnosticVirtualTextHint  = {fg = palette.purple},
 		DiagnosticVirtualTextOk    = {},
 
-		DiagnosticUnderlineError   = {undercurl = true, sp = palette.error},
-		DiagnosticUnderlineWarn    = {undercurl = true, sp = palette.yellow},
-		DiagnosticUnderlineInfo    = {undercurl = true, sp = palette.paleblue},
-		DiagnosticUnderlineHint    = {undercurl = true, sp = palette.purple},
+		DiagnosticUnderlineError   = { style = { "undercurl" }, sp = palette.error},
+		DiagnosticUnderlineWarn    = { style = { "undercurl" }, sp = palette.yellow},
+		DiagnosticUnderlineInfo    = { style = { "undercurl" }, sp = palette.paleblue},
+		DiagnosticUnderlineHint    = { style = { "undercurl" }, sp = palette.purple},
 		DiagnosticUnderlineOk      = {},
 
 		DiagnosticFloatingError    = {fg = palette.error},

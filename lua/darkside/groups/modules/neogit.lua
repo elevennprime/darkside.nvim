@@ -1,12 +1,12 @@
 local M = {}
 
-function M.get(palette, config)
+function M.get(C)
 	return {
-		NeogitBranch        = { fg = palette.green },
-		NeogitBranchHead    = { fg = palette.cyan, bold = true, underline = true },
+		NeogitBranch        = { fg = C.green },
+		NeogitBranchHead    = { fg = C.cyan, style = { "bold", "underline" } },
 		NeogitSectionHeader = { link = "Keyword" },
-		NeogitRemote        = { fg = palette.red },
-		NeogitObjectId      = { fg = palette.line_numbers },
+		NeogitRemote        = { fg = C.red },
+		NeogitObjectId      = { fg = C.line_numbers },
 		NeogitTagName       = { link = "Comment" },
 	}
 end

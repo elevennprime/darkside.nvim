@@ -43,8 +43,6 @@ return {
 	accent       = '#009688',
 
 	base         = '#181818',
-	none         = 'NONE',
-
 	string       = '#33d17a',
 	link         = '#96A6C8',
 	error        = '#ff4f58',

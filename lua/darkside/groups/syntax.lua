@@ -37,12 +37,12 @@ function M.get(palette, config)
 			Exception: try, catch, throw
 		]]
 		Statement           = {fg = palette.cyan},
-		Conditional         = {fg = palette.yellow, bold = true},
-		Repeat              = {fg = palette.yellow, bold = true},
-		Label               = {fg = palette.fg, bold = true},
+		Conditional         = {fg = palette.yellow, style = { "bold" }},
+		Repeat              = {fg = palette.yellow, style = { "bold" }},
+		Label               = {fg = palette.fg, style = { "bold" }},
 		Operator            = {fg = palette.fg},
-		Keyword             = {fg = palette.yellow, bold = true},
-		Exception           = {fg = palette.yellow, bold = true},
+		Keyword             = {fg = palette.yellow, style = { "bold" }},
+		Exception           = {fg = palette.yellow, style = { "bold" }},
 
 		--[[
 			PreProc: generic Preprocessor
@@ -81,35 +81,35 @@ function M.get(palette, config)
 		Debug               = {fg = palette.red},
 
 		-- Underlined: text that stands out, HTML links
-		Underlined          = {fg = palette.link, underline = true},
+		Underlined          = {fg = palette.link, style = { "underline" }},
 
 		-- Ignore: left blank, hidden
 		Ignore              = {fg = palette.disabled},
 
 		-- Error: any erroneous construct
-		Error               = {fg = palette.error, bold = true, underline = true},
+		Error               = {fg = palette.error, style = { "bold", "underline" }},
 
 		-- Todo: anything that needs extra attention; mostly the keywords TODO HACK FIXME and XXX
-		Todo                = {fg = palette.orange, bold = true},
+		Todo                = {fg = palette.orange, style = { "bold" }},
 
 		-- Extra highlights
-		htmlLink            = {fg = palette.link, underline = true},
+		htmlLink            = {fg = palette.link, style = { "underline" }},
 		htmlTagName         = {fg = palette.pink1},
 
 		htmlArg             = {fg = palette.fg},
-		htmlH1              = {fg = palette.cyan, bold = true},
-		htmlH2              = {fg = palette.red, bold = true},
-		htmlH3              = {fg = palette.green, bold = true},
-		htmlH4              = {fg = palette.yellow, bold = true},
-		htmlH5              = {fg = palette.purple, bold = true},
+		htmlH1              = {fg = palette.cyan, style = { "bold" }},
+		htmlH2              = {fg = palette.red, style = { "bold" }},
+		htmlH3              = {fg = palette.green, style = { "bold" }},
+		htmlH4              = {fg = palette.yellow, style = { "bold" }},
+		htmlH5              = {fg = palette.purple, style = { "bold" }},
 
 		xmlTagName          = {link = "htmlTagName"},
 		xmlTagN             = {link = "xmlTagName"},
 		xmlAttrib           = {link = "htmlArg"},
 
-		markdownH1          = {fg = palette.cyan, bold = true},
-		markdownH2          = {fg = palette.red, bold = true},
-		markdownH3          = {fg = palette.green, bold = true},
+		markdownH1          = {fg = palette.cyan, style = { "bold" }},
+		markdownH2          = {fg = palette.red, style = { "bold" }},
+		markdownH3          = {fg = palette.green, style = { "bold" }},
 		markdownH1Delimiter = {fg = palette.cyan},
 		markdownH2Delimiter = {fg = palette.red},
 		markdownH3Delimiter = {fg = palette.green},
@@ -122,7 +122,7 @@ function M.get(palette, config)
 		DashboardShortCut = {fg = palette.red},
 		DashboardHeader   = {fg = palette.comments},
 		DashboardCenter   = {fg = palette.accent},
-		DashboardFooter   = {fg = palette.green, italic = true},
+		DashboardFooter   = {fg = palette.green, style = { "italic" }},
 
 		-- json
 		jsonKeyword          = {fg = palette.fg, bold = false},

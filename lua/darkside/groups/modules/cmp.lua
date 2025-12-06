@@ -5,11 +5,11 @@ function M.get(palette, config)
 		-- Highlight group for unmatched characters of each completion field.
 		-- CmpItemAbbr = {fg = palette.fg},
 		-- Highlight group for unmatched characters of each deprecated completion field.
-		CmpItemAbbrDeprecated = {strikethrough = true},
+		CmpItemAbbrDeprecated = {style = { "strikethrough" }},
 
 		-- Highlight group for matched characters of each completion field. Matched characters
 		-- must form a substring of a field which share a starting position.
-		CmpItemAbbrMatch = {fg = palette.blue3, bold = true},
+		CmpItemAbbrMatch = {fg = palette.blue3, style = { "bold" }},
 		-- Highlight group for fuzzy-matched characters of each completion field.
 		CmpItemAbbrMatchFuzzy = {link = "CmpItemAbbrMatch"},
 

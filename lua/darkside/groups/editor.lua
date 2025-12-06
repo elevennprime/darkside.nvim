@@ -11,7 +11,7 @@ function M.get(palette, config)
 		CursorColumn     = {link = "CursorLine"}, -- Screen-column at the cursor, when 'cursorcolumn' is set.
 		CursorLine       = {fg = palette.none, bg = palette.active}, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 
-		Directory        = {fg = palette.blue, bold = true}, -- directory names (and other special names in listings)
+		Directory        = {fg = palette.blue, style = { "bold" } }, -- directory names (and other special names in listings)
 
 		EndOfBuffer      = {fg = palette.line_numbers}, -- Set End of Buffer lines (~)
 
@@ -38,7 +38,7 @@ function M.get(palette, config)
 		CursorLineNr     = {link = "LineNr"}, -- Like LineNr when 'cursorline' is set for the cursor line.
 		-- CursorLineSign
 		-- CursorLineFold
-		MatchParen       = {fg = palette.yellow, bold = true}, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+		MatchParen       = {fg = palette.yellow, style = { "bold" } }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		-- ModeMsg          = {fg = styles.fg}, -- 'showmode' message (e.g., "-- INSERT -- ")
 		-- MsgArea = {},
 		-- MsgSeparator = {},
@@ -79,14 +79,14 @@ function M.get(palette, config)
 		-- QuickFixLine     = {fg = styles.highlight, bg = styles.title, reverse = true},
 		QuickFixLine     = {bg = palette.highlight},
 
-		Search           = {fg = palette.title, bg = palette.selection, bold = true}, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
+		Search           = {fg = palette.title, bg = palette.selection, style = {"bold"} }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
 		SpecialKey       = {fg = palette.purple}, -- Unprintable characters: text displayed differently from what it really is. But not 'listchars' whitespace. |hl-Whitespace|
 		-- CurSearch = {}, -- 'cursearch' highlighting: highlights the current search you're on differently
 
-		SpellBad         = {fg = palette.error, undercurl = true}, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-		SpellCap         = {fg = palette.blue, undercurl = true}, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-		SpellLocal       = {fg = palette.cyan, undercurl = true}, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-		SpellRare        = {fg = palette.purple, undercurl = true}, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
+		SpellBad         = {fg = palette.error, style = { "undercurl" }}, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+		SpellCap         = {fg = palette.blue, style = { "undercurl" }}, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+		SpellLocal       = {fg = palette.cyan, style = { "undercurl" }}, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+		SpellRare        = {fg = palette.purple, style = { "undercurl" }}, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
 
 		StatusLine       = {fg = palette.fg, bg = palette.bg1}, -- status line of current window
 		StatusLineNC     = {fg = palette.fg_alt, bg = palette.bg_alt}, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
@@ -96,7 +96,7 @@ function M.get(palette, config)
 		TabLineFill      = {fg = palette.fg}, -- tab pages line, where there are no labels
 		TablineSel       = {fg = palette.none, bg = palette.accent}, -- tab pages line, active tab page label
 
-		Title            = {fg = palette.title, bold = true}, -- titles for output from ":set all", ":autocmd" etc.
+		Title            = {fg = palette.title, style = { "bold" }}, -- titles for output from ":set all", ":autocmd" etc.
 		Visual           = {fg = palette.none, bg = palette.selection}, -- Visual mode selection
 		VisualNOS        = {link = "Visual"}, -- Visual mode selection when vim is "Not Owning the Selection".
 
@@ -104,7 +104,7 @@ function M.get(palette, config)
 
 		Whitespace       = {fg = palette.disabled}, -- "nbsp", "space", "tab" and "trail" in 'listchars'
 
-		WildMenu         = {fg = palette.orange, bold = true}, -- current match in 'wildmenu' completion
+		WildMenu         = {fg = palette.orange, style = { "bold" }}, -- current match in 'wildmenu' completion
 
 		VertSplit        = {fg = palette.vsp}, -- The column separating vertically split windows
 
@@ -114,7 +114,7 @@ function M.get(palette, config)
 		DiffAdd          = {fg = palette.fg, bg = palette.bg_alt}, -- diff mode: Added line
 		DiffChange       = {fg = palette.fg, bg = palette.darkblue}, -- diff mode: Changed line
 		DiffDelete       = {bg = palette.bg_alt}, -- diff mode: Deleted line
-		DiffText         = {fg = palette.fg, bg = palette.darkblue, bold = true, reverse = true}, -- diff mode: Changed text within a changed line
+		DiffText         = {fg = palette.fg, bg = palette.darkblue, style = { "bold", "reverse" }}, -- diff mode: Changed text within a changed line
 
 		---
 		diffAdded   = { fg = palette.blue },

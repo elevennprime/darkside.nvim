@@ -47,16 +47,16 @@ function M.get(palette, config)
 		["@parameter.reference"]   = {fg = palette.paleblue}, -- references to parameters of a function.
 
 		-- Keywords
-		["@keyword"]               = {fg = palette.yellow, bold = true}, -- various keywords
+		["@keyword"]               = {fg = palette.yellow, style = { "bold" }}, -- various keywords
 		["@keyword.coroutine"]     = {link = "@keyword"}, -- keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
 		["@keyword.function"]      = {link = "@keyword"}, -- keywords that define a function (e.g. `func` in Go, `def` in Python)
 		["@keyword.operator"]      = {link = "@keyword"}, -- operators that are English words (e.g. `and` / `or`)
 		["@keyword.return"]        = {link = "@keyword"}, -- keywords like `return` and `yield`
 
-		["@conditional"]           = {fg = palette.yellow, bold = true}, -- keywords related to conditionals (e.g. `if` / `else`)
+		["@conditional"]           = {fg = palette.yellow, style = { "bold" }}, -- keywords related to conditionals (e.g. `if` / `else`)
 		["@conditional.ternary"]   = {link = "@conditional"}, -- ternary operator (e.g. `?` / `:`)
 
-		["@repeat"]                = {fg = palette.yellow, bold = true}, -- keywords related to loops (e.g. `for` / `while`)
+		["@repeat"]                = {fg = palette.yellow, style = { "bold" }}, -- keywords related to loops (e.g. `for` / `while`)
 		["@debug"]                 = {link = "Debug"}, -- keywords related to debugging
 		["@label"]                 = {link = "Label"}, -- GOTO and other labels (e.g. `label:` in C)
 		["@include"]               = {link = "Include"}, -- keywords for including modules (e.g. `import` / `from` in Python)
@@ -68,9 +68,9 @@ function M.get(palette, config)
 		["@type"]                  = {link = "Type"}, -- type or class definitions and annotations
 		["@type.builtin"]          = {link = "@type"}, -- built-in types
 		["@type.definition"]       = {fg = palette.fg}, -- type definitions (e.g. `typedef` in C)
-		["@type.qualifier"]        = {fg = palette.yellow, bold = true}, -- type qualifiers (e.g. `const`)
+		["@type.qualifier"]        = {fg = palette.yellow, style = { "bold" }}, -- type qualifiers (e.g. `const`)
 
-		["@storageclass"]          = {fg = palette.yellow, bold = true}, -- modifiers that affect storage in memory or life-time
+		["@storageclass"]          = {fg = palette.yellow, style = { "bold" }}, -- modifiers that affect storage in memory or life-time
 		["@attribute"]             = {fg = palette.fg}, -- attribute annotations (e.g. Python decorators)
 		["@field"]                 = {fg = palette.fg}, -- object and struct fields
 		["@property"]              = {fg = palette.fg}, -- similar to `@field`
@@ -88,17 +88,17 @@ function M.get(palette, config)
 
 		-- Text
 		["@text"]                  = {fg = palette.fg}, -- non-structured text
-		["@text.strong"]           = {bold = true}, -- bold text
-		["@text.emphasis"]         = {italic = true}, -- text with emphasis
-		["@text.underline"]        = {underline = true}, -- underlined text
-		["@text.strike"]           = {strikethrough = true}, -- strike through text
-		["@text.title"]            = {fg = palette.title, bold = true}, -- text that is part of a title
+		["@text.strong"]           = {style = { "bold" }}, -- bold text
+		["@text.emphasis"]         = {style = { "italic" }}, -- text with emphasis
+		["@text.underline"]        = {style = { "underline" }}, -- underlined text
+		["@text.strike"]           = {style = { "strikethrough" }}, -- strike through text
+		["@text.title"]            = {fg = palette.title, style = { "bold" }}, -- text that is part of a title
 		["@text.quote"]            = {link = "@text"}, -- text quotations
-		["@text.uri"]              = {fg = palette.link, underline = true}, -- URIs (e.g. hyperlinks)
+		["@text.uri"]              = {fg = palette.link, style = { "underline" }}, -- URIs (e.g. hyperlinks)
 		["@text.math"]             = {fg = palette.blue}, -- math environments (e.g. `$ ... $` in LaTeX)
-		["@text.environment"]      = {fg = palette.yellow, bold = true}, -- text environments of markup languages
+		["@text.environment"]      = {fg = palette.yellow, style = { "bold" }}, -- text environments of markup languages
 		["@text.environment.name"] = {fg = palette.fg}, -- text indicating the type of an environment
-		["@text.reference"]        = {fg = palette.fg, underline = true}, -- text references, footnotes, citations, etc.
+		["@text.reference"]        = {fg = palette.fg, style = { "underline" }}, -- text references, footnotes, citations, etc.
 
 		["@text.literal"]          = {fg = palette.green}, -- literal or verbatim text (e.g., inline code)
 		["@text.literal.block"]    = {link = "@text"}, -- literal or verbatim text as a stand-alone block
@@ -126,18 +126,18 @@ function M.get(palette, config)
 
 		-- Language specific:
 		-- latex
-		["@namespace.latex"]       = {fg = palette.yellow, bold = true}, -- For identifiers referring to modules and namespaces.
+		["@namespace.latex"]       = {fg = palette.yellow, style = { "bold" }}, -- For identifiers referring to modules and namespaces.
 		-- json
 		["@label.json"]            = {bold = false},
 
 		-- markdown
 		["@punctuation.special.markdown"] = {fg = palette.gray},
-		["@text.title.1.markdown"]        = {fg = palette.blue2, bold = true},
-		["@text.title.2.markdown"]        = {fg = palette.blue2, bold = true},
-		["@text.title.3.markdown"]        = {fg = palette.blue2, bold = true},
-		["@text.title.4.markdown"]        = {fg = palette.blue2, bold = true},
-		["@text.title.5.markdown"]        = {fg = palette.blue2, bold = true},
-		["@text.title.6.markdown"]        = {fg = palette.blue2, bold = true},
+		["@text.title.1.markdown"]        = {fg = palette.blue2, style = { "bold" }},
+		["@text.title.2.markdown"]        = {fg = palette.blue2, style = { "bold" }},
+		["@text.title.3.markdown"]        = {fg = palette.blue2, style = { "bold" }},
+		["@text.title.4.markdown"]        = {fg = palette.blue2, style = { "bold" }},
+		["@text.title.5.markdown"]        = {fg = palette.blue2, style = { "bold" }},
+		["@text.title.6.markdown"]        = {fg = palette.blue2, style = { "bold" }},
 		["@text.title.1.marker.markdown"] = {fg = palette.gray},
 		["@text.title.2.marker.markdown"] = {fg = palette.gray},
 		["@text.title.3.marker.markdown"] = {fg = palette.gray},

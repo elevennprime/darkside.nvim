@@ -1,6 +1,5 @@
 local path_sep = require("darkside").path_sep
 local opts = require("darkside").options
-local parse_style = require("darkside.lib.highlight").parse_style
 local fmt = string.format
 
 local M = {}
@@ -37,13 +36,14 @@ function M.complier()
 				vim.o.termguicolors = true
 				vim.g.colors_name = "%s"
 				vim.o.background = "%s"
-    ]],
+			]],
 			"darkside",
 			"dark"
 		),
 	}
 
-	for group, color in pairs(groups) do
+	local tbl = vim.tbl_deep_extend("keep", groups.modules, groups.syntax, groups.editor)
+	for group, color in pairs(tbl) do
 		if color.style then
 			for _, style in pairs(color.style) do color[style] = true end
 		end

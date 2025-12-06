@@ -7,10 +7,6 @@ local M = {
 		},
 		default_modules = true,
 		modules = {
-			diagnostic = true,
-			lsp_semantic = true,
-			lsp = true,
-			treesitter = true,
 			cmp = true,
 			neogit = true,
 			gitsigns = true,
@@ -21,16 +17,6 @@ local M = {
 }
 
 M.options = vim.tbl_deep_extend("force", {}, M.default_options, M.options or {})
-
-M.module_names = {
-	"diagnostic",
-	"lsp_semantic",
-	"lsp",
-	"treesitter",
-	"cmp",
-	"neogit",
-	"gitsigns",
-}
 
 local did_setup = false
 function M.load()
