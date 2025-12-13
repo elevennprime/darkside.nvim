@@ -9,7 +9,7 @@ function M.get(palette, config)
 		CursorIM         = {fg = palette.bg_alt, bg = palette.cursor}, -- like Cursor, but used when in IME mode
 
 		CursorColumn     = {link = "CursorLine"}, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-		CursorLine       = {fg = palette.none, bg = palette.active}, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+		CursorLine       = {fg = palette.none, bg = palette.bg2}, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 
 		Directory        = {fg = palette.blue, style = { "bold" } }, -- directory names (and other special names in listings)
 
@@ -28,7 +28,7 @@ function M.get(palette, config)
 		SignColumn       = {fg = palette.fg, bg = palette.none},
 		-- SignColumnSB = { bg = C.crust, fg = C.surface1 }, -- column where |signs| are displayed
 
-		IncSearch        = {fg = palette.title, bg = palette.selection, underline = true}, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+		IncSearch        = {fg = palette.title, bg = palette.highlight, underline = true}, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 
 		-- Substitute = { bg = palette.selection, bold = true}, -- |:substitute| replacement text highlighting
 
@@ -77,9 +77,9 @@ function M.get(palette, config)
 		Question         = {fg = palette.green}, -- |hit-enter| prompt and yes/no questions
 		-- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		-- QuickFixLine     = {fg = styles.highlight, bg = styles.title, reverse = true},
-		QuickFixLine     = {bg = palette.highlight},
+		QuickFixLine     = {bg = palette.bg2},
 
-		Search           = {fg = palette.title, bg = palette.selection, style = {"bold"} }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
+		Search           = {fg = palette.title, bg = palette.highlight, style = {"bold"} }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
 		SpecialKey       = {fg = palette.purple}, -- Unprintable characters: text displayed differently from what it really is. But not 'listchars' whitespace. |hl-Whitespace|
 		-- CurSearch = {}, -- 'cursearch' highlighting: highlights the current search you're on differently
 
@@ -97,7 +97,7 @@ function M.get(palette, config)
 		TablineSel       = {fg = palette.none, bg = palette.accent}, -- tab pages line, active tab page label
 
 		Title            = {fg = palette.title, style = { "bold" }}, -- titles for output from ":set all", ":autocmd" etc.
-		Visual           = {fg = palette.none, bg = palette.selection}, -- Visual mode selection
+		Visual           = {fg = palette.none, bg = palette.highlight}, -- Visual mode selection
 		VisualNOS        = {link = "Visual"}, -- Visual mode selection when vim is "Not Owning the Selection".
 
 		WarningMsg       = {fg = palette.yellow}, -- warning messages
@@ -135,7 +135,7 @@ function M.get(palette, config)
 		-- Unknown
 		NormalContrast   = {fg = palette.fg, bg = palette.bg_alt}, -- a help group for contrast fileypes
 
-		StatusLineTerm   = {fg = palette.fg, bg = palette.active}, -- status line of current terminal window
+		-- StatusLineTerm   = {fg = palette.fg, bg = palette.active}, -- status line of current terminal window
 		StatusLineTermNC = {fg = palette.disabled, bg = palette.none}, -- status lines of not-current terminal windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		-- ToolbarLine   = {fg = styles.fg, bg = styles.bg_alt},
 		-- ToolbarButton = {fg = styles.fg, bold = true},

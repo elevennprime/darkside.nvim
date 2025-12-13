@@ -2,7 +2,7 @@ local M = {}
 
 function M.get(palette, config)
 	return {
-		LspReferenceText  = {bg = palette.selection, style = { "underline" }}, -- used for highlighting "text" references
+		LspReferenceText  = {bg = palette.highlight, style = { "underline" }}, -- used for highlighting "text" references
 		LspReferenceRead  = {link = "LspReferenceText"}, -- used for highlighting "read" references
 		LspReferenceWrite = {link = "LspReferenceText"}, -- used for highlighting "write" references
 		-- Used to color the virtual text of the codelens. See

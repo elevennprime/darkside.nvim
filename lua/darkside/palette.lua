@@ -29,6 +29,7 @@ return {
 	bg           = '#0f0f0f',
 	bg_alt       = '#181818',
 	bg1          = '#232323',
+	bg2          = '#303030',
 	fg           = '#e4e4ef',
 	fg_alt       = '#9e9e9e',
 
@@ -38,7 +39,6 @@ return {
 	disabled     = '#282828',
 
 	contrast     = '#1e272c',
-	active       = '#314549',
 	border       = '#37444c',
 	accent       = '#009688',
 
