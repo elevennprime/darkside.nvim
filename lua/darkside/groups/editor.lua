@@ -9,7 +9,7 @@ function M.get(palette, config)
 		CursorIM         = {fg = palette.bg_alt, bg = palette.cursor}, -- like Cursor, but used when in IME mode
 
 		CursorColumn     = {link = "CursorLine"}, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-		CursorLine       = {fg = palette.none, bg = palette.bg2}, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+		CursorLine       = {fg = palette.none, bg = palette.highlight}, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 
 		Directory        = {fg = palette.blue, style = { "bold" } }, -- directory names (and other special names in listings)
 
@@ -28,7 +28,7 @@ function M.get(palette, config)
 		SignColumn       = {fg = palette.fg, bg = palette.none},
 		-- SignColumnSB = { bg = C.crust, fg = C.surface1 }, -- column where |signs| are displayed
 
-		IncSearch        = {fg = palette.title, bg = palette.highlight, underline = true}, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+		IncSearch        = {fg = palette.title, bg = palette.selection, underline = true}, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 
 		-- Substitute = { bg = palette.selection, bold = true}, -- |:substitute| replacement text highlighting
 
@@ -67,7 +67,7 @@ function M.get(palette, config)
 		-- Normal item
 		Pmenu            = {fg = palette.fg, bg = palette.none},
 		-- selected item
-		PmenuSel         = {fg = palette.fg, bg = palette.selection},
+		PmenuSel         = {fg = palette.fg, bg = palette.highlight},
 
 		-- PmenuSbar = {}, -- Popup menu: scrollbar.
 
@@ -79,7 +79,7 @@ function M.get(palette, config)
 		-- QuickFixLine     = {fg = styles.highlight, bg = styles.title, reverse = true},
 		QuickFixLine     = {bg = palette.bg2},
 
-		Search           = {fg = palette.title, bg = palette.highlight, style = {"bold"} }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
+		Search           = {fg = palette.title, bg = palette.selection, style = {"bold"} }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
 		SpecialKey       = {fg = palette.purple}, -- Unprintable characters: text displayed differently from what it really is. But not 'listchars' whitespace. |hl-Whitespace|
 		-- CurSearch = {}, -- 'cursearch' highlighting: highlights the current search you're on differently
 
@@ -97,7 +97,7 @@ function M.get(palette, config)
 		TablineSel       = {fg = palette.none, bg = palette.accent}, -- tab pages line, active tab page label
 
 		Title            = {fg = palette.title, style = { "bold" }}, -- titles for output from ":set all", ":autocmd" etc.
-		Visual           = {fg = palette.none, bg = palette.highlight}, -- Visual mode selection
+		Visual           = {fg = palette.none, bg = palette.selection}, -- Visual mode selection
 		VisualNOS        = {link = "Visual"}, -- Visual mode selection when vim is "Not Owning the Selection".
 
 		WarningMsg       = {fg = palette.yellow}, -- warning messages
